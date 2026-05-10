@@ -86,20 +86,6 @@
     }
     .cd-sep { color: rgba(255,255,255,0.3); }
 
-    /* ── PROCHAIN RDV BANNER ── */
-    #next-rdv-bar {
-      display: none;
-      background: #0f172a;
-      border-bottom: 2px solid var(--red);
-      padding: 0.55rem 1rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.7);
-    }
-    #next-rdv-bar .nrb-label { color: var(--amber); font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; }
-    #next-rdv-bar .nrb-event { color: #fff; font-weight: 700; margin: 0 0.4rem; }
-    #next-rdv-bar .nrb-time  { color: var(--red); font-weight: 800; }
-
     /* ── TABS ── */
     .tabs-wrapper {
       background: var(--white); border-bottom: 1px solid var(--slate-300);
@@ -128,33 +114,11 @@
       background: var(--white); border: 1px solid var(--slate-300);
       border-left: 4px solid var(--red); border-radius: var(--radius);
       padding: 1.2rem 1.5rem; margin-bottom: 1rem;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; box-shadow: var(--shadow-sm); flex-wrap: wrap;
+      display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);
     }
-    .day-intro-left { display: flex; align-items: center; gap: 1rem; }
     .day-icon { font-size: 2rem; flex-shrink: 0; }
     .day-intro h2 { font-size: 1.05rem; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: 0.05em; }
     .day-intro p  { font-size: 0.84rem; color: var(--slate-500); margin-top: 0.1rem; }
-
-    /* ── ICS BUTTON ── */
-    .ics-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: var(--dark); color: #fff; border: none; cursor: pointer;
-      font-size: 0.78rem; font-weight: 600; padding: 0.45rem 0.9rem;
-      border-radius: 8px; transition: background .15s; white-space: nowrap; flex-shrink: 0;
-      text-decoration: none;
-    }
-    .ics-btn:hover { background: var(--charcoal); }
-
-    /* ── LÉGENDE ── */
-    .legend {
-      display: flex; gap: 0.6rem; flex-wrap: wrap;
-      margin-bottom: 1.5rem; padding: 0.65rem 1rem;
-      background: var(--white); border: 1px solid var(--slate-300);
-      border-radius: var(--radius); box-shadow: var(--shadow-sm);
-    }
-    .legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--slate-500); }
-    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 
     /* ── RÉSUMÉ EXPRESS ── */
     .summary-scroll {
@@ -317,22 +281,6 @@
     /* ── LIEUX ── */
     .locations { display: flex; flex-direction: column; gap: 0.7rem; }
 
-    /* ── MÉTÉO CARD ── */
-    .meteo-card {
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
-      border: 1px solid #bfdbfe; border-left: 4px solid var(--blue);
-      border-radius: var(--radius); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-sm);
-    }
-    .meteo-card h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
-    .meteo-card p  { font-size: 0.92rem; color: #1e3a5f; line-height: 1.6; }
-    .meteo-link {
-      display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.75rem;
-      font-size: 0.8rem; font-weight: 600; color: var(--blue); text-decoration: none;
-      border: 1.5px solid #bfdbfe; background: #eff6ff; border-radius: 6px;
-      padding: 0.25rem 0.7rem; transition: background .15s;
-    }
-    .meteo-link:hover { background: #dbeafe; }
-
     /* ── FOOTER ── */
     footer { text-align: center; padding: 1.5rem 1rem; border-top: 1px solid var(--slate-300); color: var(--slate-400); font-size: 0.78rem; }
 
@@ -370,14 +318,6 @@
   </div>
 </div>
 
-<!-- ── PROCHAIN RDV (visible seulement le 15 mai) ── -->
-<div id="next-rdv-bar">
-  <span class="nrb-label">⏱ Prochain RDV</span>
-  <span class="nrb-event" id="nrb-event">–</span>
-  <span>dans</span>
-  <span class="nrb-time" id="nrb-time">–</span>
-</div>
-
 <!-- ── TABS ── -->
 <div class="tabs-wrapper">
   <div class="tabs" role="tablist">
@@ -402,14 +342,11 @@
   <div id="tab-programme" class="tab-panel active">
 
     <div class="day-intro">
-      <div class="day-intro-left">
-        <div class="day-icon">🎶</div>
-        <div>
-          <h2>Vendredi 15 mai 2026</h2>
-          <p>Fête fédérale de musique · Bienne</p>
-        </div>
+      <div class="day-icon">🎶</div>
+      <div>
+        <h2>Vendredi 15 mai 2026</h2>
+        <p>Fête fédérale de musique · Bienne</p>
       </div>
-      <button class="ics-btn" onclick="downloadICS()">📅 Ajouter au calendrier</button>
     </div>
 
     <!-- Résumé express -->
@@ -442,14 +379,6 @@
         <div class="summary-pill-time">18h30</div>
         <div class="summary-pill-label">🏠 Retour</div>
       </div>
-    </div>
-
-    <!-- Légende -->
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Concours / Départ / Retour</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Repas &amp; convivialité</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Point d'attention</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Trajet / Info pratique</div>
     </div>
 
     <!-- Timeline -->
@@ -672,8 +601,7 @@
   <!-- ══ À EMPORTER ══════════════════════════════════════════════ -->
   <div id="tab-emporter" class="tab-panel">
     <div class="day-intro">
-      <div class="day-intro-left">
-        <div class="day-icon">🎒</div>
+      <div class="day-icon">🎒</div>
         <div>
           <h2>À prendre avec soi</h2>
           <p>Cochez chaque élément avant de partir</p>
@@ -728,22 +656,14 @@
   <!-- ══ LIEUX ══════════════════════════════════════════════════ -->
   <div id="tab-lieux" class="tab-panel">
     <div class="day-intro">
-      <div class="day-intro-left">
-        <div class="day-icon">📍</div>
+      <div class="day-icon">📍</div>
         <div>
           <h2>Lieux clés</h2>
           <p>Adresses et liens Maps pour la journée</p>
-        </div>
       </div>
     </div>
 
     <div class="locations">
-
-      <div class="meteo-card">
-        <h3>🌤️ Météo — Biel/Bienne · 15 mai 2026</h3>
-        <p>Consultez les prévisions officielles MétéoSuisse pour préparer votre journée.</p>
-        <a class="meteo-link" href="https://www.meteosuisse.admin.ch/home.html?tab=overview" target="_blank" rel="noopener">🌐 MétéoSuisse → rechercher "Biel/Bienne"</a>
-      </div>
 
       <div class="info-card">
         <h3>🏠 Point de départ &amp; retour</h3>
@@ -804,8 +724,7 @@
   <!-- ══ PARTITIONS ══════════════════════════════════════════════ -->
   <div id="tab-partitions" class="tab-panel">
     <div class="day-intro">
-      <div class="day-intro-left">
-        <div class="day-icon">🎼</div>
+      <div class="day-icon">🎼</div>
         <div>
           <h2>Programme musical</h2>
           <p>Morceaux à apporter pour la journée</p>
@@ -901,43 +820,23 @@
     return h * 60 + m;
   }
 
-  // ── Live timeline highlight & next RDV ─────────────────────────
+  // ── Live timeline highlight (actif le 15 mai) ──────────────────
   function updateTimeline() {
     const now = new Date();
     const isEventDay = now.getFullYear() === 2026 && now.getMonth() === 4 && now.getDate() === 15;
-    const eventEls = document.querySelectorAll('.timeline .event');
-
     if (!isEventDay) return;
 
     const nowMin = now.getHours() * 60 + now.getMinutes();
-    const bar = document.getElementById('next-rdv-bar');
-    bar.style.display = 'block';
-
     let currentIdx = -1;
     EVENTS_DATA.forEach((ev, i) => {
       if (toMinutes(ev.time) <= nowMin) currentIdx = i;
     });
 
-    // Mark past / current
-    eventEls.forEach((el, i) => {
+    document.querySelectorAll('.timeline .event').forEach((el, i) => {
       el.classList.remove('current', 'past');
       if (i < currentIdx) el.classList.add('past');
       else if (i === currentIdx) el.classList.add('current');
     });
-
-    // Next RDV banner
-    const nextIdx = currentIdx + 1;
-    if (nextIdx < EVENTS_DATA.length) {
-      const next = EVENTS_DATA[nextIdx];
-      const diffMin = toMinutes(next.time) - nowMin;
-      const h = Math.floor(diffMin / 60);
-      const m = diffMin % 60;
-      const timeStr = h > 0 ? h + 'h' + pad(m) + 'min' : m + ' min';
-      document.getElementById('nrb-event').textContent = next.label;
-      document.getElementById('nrb-time').textContent = timeStr;
-    } else {
-      bar.style.display = 'none';
-    }
   }
 
   updateTimeline();
@@ -971,45 +870,6 @@
     updateProgress();
   })();
 
-  // ── Export ICS ──────────────────────────────────────────────────
-  function downloadICS() {
-    const ics = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Prez-vers-Noréaz//Fête fédérale Bienne 2026//FR',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      icsEvent('20260515T050000', '20260515T051500', '🚌 Rendez-vous & chargement du car', 'Salle communale de Prez-vers-Noréaz'),
-      icsEvent('20260515T051500', '20260515T063000', '🛣️ Départ car pour Bienne', 'Salle communale de Prez-vers-Noréaz'),
-      icsEvent('20260515T080000', '20260515T093000', '🎵 Échauffement', 'City-Hotel, salle Lüscherz, Biel'),
-      icsEvent('20260515T100500', '20260515T105000', '🏆 Concours en salle — Fête fédérale', 'Salle NEBIA, Rue Thomas-Wyttenbach 4, 2502 Bienne'),
-      icsEvent('20260515T123000', '20260515T133000', '🍽️ Banquet officiel', 'Salle de sport Esplanade, Rue de l\'Argent 44, 2503 Bienne'),
-      icsEvent('20260515T141500', '20260515T143500', '🪖 Mise en rangs parade', 'Rue des Jardins 13, 2502 Bienne'),
-      icsEvent('20260515T143500', '20260515T150000', '🥁 Concours de parade — Fête fédérale', 'Parcours de marche n°2, Bienne'),
-      icsEvent('20260515T150000', '20260515T152000', '📸 Photos officielles', 'Mattenstrasse 133, 2503 Bienne'),
-      icsEvent('20260515T154500', '20260515T181500', '🍻 Tournée offerte par la Commune de Prez', 'Place de fête, Bienne'),
-      icsEvent('20260515T183000', '20260515T194500', '🚌 Retour à Prez-vers-Noréaz', 'Kongresshaus, Biel'),
-      'END:VCALENDAR'
-    ].join('\r\n');
-
-    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = 'fete-federale-bienne-2026.ics';
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  function icsEvent(start, end, summary, location) {
-    return [
-      'BEGIN:VEVENT',
-      'DTSTART:' + start,
-      'DTEND:'   + end,
-      'SUMMARY:' + summary,
-      'LOCATION:' + location,
-      'END:VEVENT'
-    ].join('\r\n');
-  }
 </script>
 </body>
 </html>
